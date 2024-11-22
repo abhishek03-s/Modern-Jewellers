@@ -335,13 +335,10 @@
     }
 }
 
-
-
-/* Visit Us Section */
 /* Visit Us Section */
 .visit-section {
     position: relative;
-    padding: 50px 20px;
+    padding: 30px 15px; /* Adjusted padding for mobile */
     text-align: center;
     color: white; /* Ensures text is visible on video */
     overflow: hidden;
@@ -370,22 +367,63 @@
 .visit-section .content-wrapper {
     position: relative;
     z-index: 1; /* Keeps content above the video */
-    background: rgba(0, 0, 0, 0.5); /* Optional: Semi-transparent background for text readability */
-    padding: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Darker background for better readability */
+    padding: 15px;
     border-radius: 10px;
-    display: inline-block;
-    margin: auto;
+    margin: 0 auto; /* Center the content wrapper */
+    max-width: 600px; /* Restricts width for better mobile layout */
+    width: 100%; /* Ensures it fits the screen width */
+    box-sizing: border-box; /* Includes padding in width calculations */
 }
 
 .contact-details p {
-    font-size: 1.2rem;
-    margin: 10px 0;
+    font-size: 1rem; /* Slightly smaller font for mobile */
+    margin: 8px 0;
+    word-wrap: break-word; /* Ensures text breaks to the next line if too long */
 }
 
 #map {
     width: 100%;
-    height: 400px;
-    margin-top: 30px;
+    height: 300px; /* Smaller height for mobile */
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .visit-section {
+        padding: 20px 10px;
+    }
+
+    .visit-section .content-wrapper {
+        padding: 10px;
+    }
+
+    .contact-details p {
+        font-size: 0.9rem; /* Reduce font size for smaller screens */
+    }
+
+    #map {
+        height: 250px; /* Adjust map height for smaller devices */
+    }
+}
+
+@media (max-width: 480px) {
+    .visit-section {
+        padding: 15px 5px;
+    }
+
+    .visit-section .content-wrapper {
+        width: 100%; /* Ensure full width usage on small devices */
+        padding: 10px;
+    }
+
+    .contact-details p {
+        font-size: 0.8rem; /* Further reduce font size for very small screens */
+    }
+
+    #map {
+        height: 200px; /* Further adjust map height for very small screens */
+    }
 }
 
 

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Jewellers</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+</head>
+
+<body>
+        <!-- Navbar -->
+
+    <header class="header">
+        <a href="#" class="logo">Modern Jewellers</a>
+
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class='bx bx-menu' id="meun-icon"></i>
+            <i class='bx bx-x' id="close-icon"></i>
+        </label>
+
+        <nav class="navbar">
+            <a href="#" style="--i:0;">Home</a>
+            <a href="#" style="--i:1;">Gallery</a>
+            <a href="#" style="--i:2;">About</a>
+            <a href="#" style="--i:3;">Contact</a>
+        </nav>
+    </header>
+
+
+
+    <!-- Welcome Section -->
+    <section id="home" class="welcome-section">
+        <video autoplay muted loop id="background-video">
+            <source src="images/background/vid1 (1).mp4" type="video/mp4">
+        </video>
+        <div class="welcome-content">
+            <h1>Welcome to Modern Jewellers</h1>
+            <p>Your one-stop shop for exquisite jewellery.</p>
+        </div>
+    </section>
+
+   <!-- Gallery Section -->
+<section class="gallery-section">
+    <!-- Title -->
+    <h2 class="gallery-title">Our Gallery</h2>
+    
+    <div class="video-container">
+        <video id="gallery-video" autoplay loop muted>
+            <source src="images/background/gallery.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Gallery Items -->
+    <div class="gallery-items">
+        <!-- Gallery items go here -->
+        <div class="item"><img src="images/nav-product/product.jpg" alt="Jewelry 1"></div>
+        <div class="item"><img src="images/product/23.jpg" alt="Jewelry 2"></div>
+        <div class="item"><img src="images/product/13.jpg" alt="Jewelry 3"></div>
+        <div class="item"><img src="images/product/16.jpg" alt="Jewelry 1"></div>
+        <div class="item"><img src="images/product/71.jpg" alt="Jewelry 2"></div>
+        <div class="item"><img src="images/product/19.jpg" alt="Jewelry 3"></div>
+        <div class="item"><img src="images/product/20.jpg" alt="Jewelry 1"></div>
+        <div class="item"><img src="images/product/45.jpg" alt="Jewelry 2"></div>
+        <div class="item"><img src="images/product/10.jpg" alt="Jewelry 3"></div>
+        <div class="item"><img src="images/product/73.jpg" alt="Jewelry 2"></div>
+        <div class="item"><img src="images/product/75.jpg" alt="Jewelry 3"></div>
+        <div class="item"><img src="images/product/70.jpg" alt="Jewelry 1"></div>
+
+        <div class="item"><img src="images/product/29.jpg" alt="Jewelry 3"></div>
+        <div class="item"><img src="images/product/28.jpg" alt="Jewelry 1"></div>
+        <div class="item"><img src="images/product/47.jpg" alt="Jewelry 2"></div>
+        <div class="item"><img src="images/product/14.jpg" alt="Jewelry 3"></div>
+        <div class="item"><img src="images/product/8.jpg" alt="Jewelry 2"></div>
+        <div class="item"><img src="images/product/7.jpg" alt="Jewelry 3"></div>
+       
+        
+        <!-- Add more items as needed -->
+    </div>
+</section>
+
+    
+   <!-- About Us Section -->
+<section id="about" class="about-section">
+    <h2>About Us</h2>
+    <div class="about-content">
+        <p>
+            At Modern Jewellers, we believe in the timeless beauty of handcrafted jewelry. Our pieces are designed with passion, attention to detail, and a commitment to excellence. 
+        </p>
+        <p>
+            Every piece we create is a fusion of artistry and skill, showcasing the dedication of our talented artisans from India. We aim to provide you with unique designs that resonate with elegance and sophistication, perfect for any occasion.
+        </p>
+    </div>
+</section>
+
+
+    <!-- Visit Us Section -->
+<section id="visit" class="visit-section">
+    <!-- Background Video -->
+    <div class="video-container">
+        <video id="visit-video" autoplay loop muted>
+            <source src="images/background/map.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+
+    <!-- Services We Provide Section -->
+<section id="services" class="services-section">
+    <h2>Services We Provide</h2>
+    <div class="services-content">
+        <!-- Service Item 1 -->
+        <div class="service-item">
+            <img src="images/instagram/insta-1.jpg" alt="Custom Jewelry Design">
+            <h3>Custom Jewelry Design</h3>
+            <p>We specialize in crafting unique, personalized jewelry tailored to your desires and style.</p>
+        </div>
+        <!-- Service Item 2 -->
+        <div class="service-item">
+            <img src="images/instagram/insta-4.jpg" alt="Jewelry Repair">
+            <h3>Jewelry Repair</h3>
+            <p>From resizing rings to fixing broken chains, we bring your cherished pieces back to life.</p>
+        </div>
+        <!-- Service Item 3 -->
+        <div class="service-item">
+            <img src="images/instagram/insta-6.jpg" alt="Jewelry Appraisal">
+            <h3>Jewelry Appraisal</h3>
+            <p>Receive professional assessments of your jewelry’s value by our experts.</p>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Content -->
+    <div class="content-wrapper">
+        <h2>Visit Us</h2>
+        <div class="contact-details">
+            <p>Phone: 07947106852</p>
+            <p>Address: Mandi Bazar, Ambajogai - 431517</p>
+            <p>Store Hours: Mon - Sat: 9:30 AM - 7:00 PM, Sun: Closed</p>
+        </div>
+        <div id="map">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3778.3787918013363!2d76.388869!3d18.73661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDQ0JzExLjgiTiA3NsKwMjMnMTkuOSJF!5e0!3m2!1sen!2sin!4v1732196834158!5m2!1sen!2sin" 
+                width="600" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <!-- Logo Section -->
+          
+            
+            <!-- Social Links Section -->
+            <div class="social-links">
+                <a href="https://www.facebook.com/p/Modern-Jewellery-House-100067029043492/?locale=sw_KE" target="_blank">
+                    <img src="images/logo/fb.png" alt="Facebook">
+                </a>
+                <a href="https://www.justdial.com/Ambajogai/Modern-Jewellers-Mandi-BazarOppo-to-Amba-Jogai-Mandir-Ambajogai/9999P2442-2442-131223155619-N4Z6_BZDET" target="_blank">
+                    <img src="images/logo/logoo.webp" alt="Instagram">
+                </a>
+                <a href="https://instagram.com" target="_blank">
+                    <img src="images/logo/instagram" alt="Instagram">
+                </a>
+                
+            </div>
+        </div>
+    </footer>
+    
+</body>
+
+</html>

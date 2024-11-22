@@ -1,0 +1,427 @@
+   *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.header ::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+}
+
+.header::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.4), transparent) ;
+    transition: .5s;
+}
+
+.header:hover:after{
+    left: 100%;
+}
+
+.logo{
+   
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700; 
+}
+
+.navbar a{
+         font-size: 1.15rem;
+         color: #fff;
+         text-decoration: none;
+         font-weight: 500;
+         margin-left: 2.5rem;
+}
+
+#check{
+    display: none;
+}
+
+.icons{
+    position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width:992px){
+    .header{
+        padding: 1.3rem 5%;
+    }
+}
+
+@media (max-width:768px){
+    .icons{
+        display: inline-flex;
+    }
+
+#check:checked~.icons #meun-icon {
+    display: none;
+}    
+
+.icons #close-icon{
+    display: none;
+}  
+
+
+#check:checked~.icons #close-icon {
+    display: block;
+}  
+
+.navbar{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(50px);
+    box-shadow: 0.5rem 1rem rgba(0, 0, 0, .1);
+    overflow: hidden;
+    transition: .3s ease;
+
+   }
+
+   
+#check:checked~.navbar{
+    height: 17.7rem;
+}  
+
+   .navbar a{
+    display: block;
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+    text-align: center;
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: .3s ease;
+  }
+}
+
+   
+#check:checked~.navbar a{
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay:calc(.15s *var(--i)) ;
+} 
+
+
+.index {
+    position: fixed;
+    top: 20%;
+    left: 10%;
+    margin: 6%;    
+    color: #83786c;
+    align-content: space-between;
+}
+
+
+/* Welcome Section */
+.welcome-section {
+    position: relative;
+    height: 100vh;  /* Full height of the viewport */
+    width: 100vw;   /* Full width of the viewport */
+    overflow: hidden;  /* Hides any overflow */
+}
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;   /* Full width of the viewport */
+    height: 100vh;  /* Full height of the viewport */
+    object-fit: cover;  /* Ensures the video covers the full screen, even if it means cropping */
+    z-index: -1;  /* Places the video behind the content */
+}
+
+.welcome-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+  
+    
+}
+
+/* Gallery Section */
+.gallery-section {
+    position: relative;
+    width: 100%;
+    padding: 10px 0; /* Reduced padding */
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Video */
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Send to background */
+    overflow: hidden;
+}
+
+#gallery-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure full background coverage */
+}
+
+/* Title */
+.gallery-title {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for contrast */
+}
+
+/* Gallery Items */
+.gallery-items {
+    position: relative;
+    z-index: 2; /* Keep above the video */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Auto-responsive */
+    grid-gap: 15px; /* Add consistent spacing */
+    justify-items: center; /* Center items in each cell */
+    align-items: center; /* Vertically align items */
+    padding: 0 10px; /* Minimize horizontal padding */
+}
+
+.item img {
+    width: 100%; /* Adjust to the grid cell */
+    max-width: 150px; /* Ensure reasonable max size */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .gallery-items {
+        grid-template-columns: repeat(3, 1fr); /* Show 3 items per row */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-items {
+        grid-template-columns: repeat(2, 1fr); /* Show 2 items per row */
+    }
+}
+
+
+/* About Us Section */
+.about-section {
+    padding: 60px 20px;
+    background-image: url('images/background/background1.jpg'); /* Update with your preferred image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5); /* Adds a dark overlay */
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+  
+/* Services Section */
+.services-section {
+    padding: 60px 20px;
+    background-color: #f9f5f0; /* Light background color for contrast */
+    text-align: center;
+}
+
+.services-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #333;
+}
+
+.services-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.service-item {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px; /* Fixed width for consistency */
+    text-align: center;
+}
+
+.service-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.service-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.service-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #777;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .service-item {
+        width: 100%; /* Full width on smaller screens */
+    }
+}
+
+
+
+/* Visit Us Section */
+/* Visit Us Section */
+.visit-section {
+    position: relative;
+    padding: 50px 20px;
+    text-align: center;
+    color: white; /* Ensures text is visible on video */
+    overflow: hidden;
+}
+
+.visit-section .video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Send video to the background */
+    overflow: hidden;
+}
+
+#visit-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video covers the section */
+}
+
+.visit-section .content-wrapper {
+    position: relative;
+    z-index: 1; /* Keeps content above the video */
+    background: rgba(0, 0, 0, 0.5); /* Optional: Semi-transparent background for text readability */
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    margin: auto;
+}
+
+.contact-details p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+    margin-top: 30px;
+}
+
+
+/* Footer */
+footer {
+    background-color: #e9e5db;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px,20px,0,0;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-logo img {
+    width: 150px; /* Adjust size as needed */
+    margin-bottom: 20px;
+}
+
+footer .social-links {
+    margin-top: 10px;
+    display: flex;
+    gap: 15px; /* Spacing between icons */
+}
+
+footer .social-links a img {
+    width: 40px; /* Adjust size of social media icons */
+    height: 40px;
+    transition: transform 0.3s;
+}
+
+footer .social-links a img:hover {
+    transform: scale(1.2); /* Zoom effect on hover */
+}
